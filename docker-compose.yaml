@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    container_name: apache_server_demo
+    ports:
+      - "443:443"
+    volumes:
+      - ./htdocs:/usr/local/apache2/htdocs
+    restart: always
+
+volumes:
+  html:
+    driver: local
